@@ -1,0 +1,23 @@
+function LetterChanges(str) { 
+
+  // code goes here  
+  var letters="abcdefghijklmnopqrstuvwxyz";
+  var newStr="";
+  var s=str.toLowerCase();
+  
+  for(var i=0;i<s.length;i++){
+      var charcode=letters.indexOf(s[i]);
+      if(charcode===25){
+          newStr=newStr+"a"; //z is replaced with a
+      }else if(charcode===-1){
+          newStr=newStr+s[i]; //if the new string is returned
+      }else{
+          newStr=newStr+letters[charcode+1]; //letters in string are replaced with following letter
+      }
+  }
+  return newStr.replace(/[aeiou]/g,function(a){  //vowels are capitalised
+      return a.toUpperCase();
+  });
+  
+         
+}
